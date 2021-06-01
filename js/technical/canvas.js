@@ -24,14 +24,44 @@ function resizeCanvas() {
 
 var colors = {
 	default: {
+    background: "#0f0f0f",
+    tooltip: "rgba(0, 0, 0, 0.75)",
 		1: "#ffffff",
 		2: "#bfbfbf",
 		3: "#7f7f7f",
+		4: "#7f7f7f",
 	},
 	aqua: {
+    background: "#001f3f",
+    tooltip: "rgba(0, 15, 31, 0.75)",
 		1: "#bfdfff",
 		2: "#8fa7bf",
-		3: "#5f6f7f",
+		3: "#6387ad",
+		4: "#5f6f7f",
+	},
+	gameboy: {
+    background: "#010f00",
+    tooltip: "rgba(0, 33, 0, 0.75)",
+		1: "#73a671",
+		2: "#458542",
+		3: "#216e1e",
+		4: "#094a07",
+	},
+	ruby: {
+    background: "#170000",
+    tooltip: "rgba(45, 0, 0, 0.75)",
+		1: "#bb9999",
+		2: "#a98787",
+		3: "#996565",
+		4: "#763434",
+	},
+	brighter: {
+    background: "#4f4f4f",
+    tooltip: "rgba(115, 115, 115, 0.75)",
+		1: "#ffffff",
+		2: "#dfdfdf",
+		3: "#bfbfbf",
+		4: "#bfbfbf",
 	},
 }
 var colors_theme

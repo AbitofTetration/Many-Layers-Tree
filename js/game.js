@@ -134,6 +134,9 @@ function canReset(layer)
 
 function rowReset(row, layer) {
 	for (lr in ROW_LAYERS[row]){
+    if (layers[lr].neverResets) {
+      if (layers[lr].neverResets()) return;
+    }
 		if(layers[lr].doReset) {
 
 			player[lr].activeChallenge = null // Exit challenges on any row reset on an equal or higher row
