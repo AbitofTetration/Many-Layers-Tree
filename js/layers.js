@@ -61,7 +61,7 @@ addLayer("p", {
                 title: "Growing Booster",
                 description: "Point generation is faster based on your reset time.",
                 cost: new ExpantaNum(15),
-                unlocked() { return (hasUpgrade(this.layer, 13))},
+                unlocked() { return (hasUpgrade(this.layer, 2))},
                 effect() { // Calculate bonuses from the upgrade. Can return a single value or an object with multiple values
                     let main = new ExpantaNum(player[this.layer].resetTime).div(25)
                     if (player.b.buyables[11].gt(0)) main = main.mul(tmp.b.buyables[11].effect)
@@ -75,7 +75,7 @@ addLayer("p", {
                 title: "Prestigious Mastery",
                 description: "Double prestige points.",
                 cost: new ExpantaNum(30),
-                unlocked() { return (hasUpgrade(this.layer, 21))},
+                unlocked() { return (hasUpgrade(this.layer, 13)&&hasUpgrade(this.layer, 21))},
             },
             23: {
                 title: "Self Booster",
@@ -308,9 +308,9 @@ addLayer("e", {
                 title: "Energetic Telekinesis",
                 description: "Total Energy Upgrades multiply Energy generation.",
                 cost: new ExpantaNum(250),
-                unlocked() { return hasUpgrade(this.layer, 13)},
+                unlocked() { return hasUpgrade(this.layer, 12)},
                 effect() { // Calculate bonuses from the upgrade. Can return a single value or an object with multiple values
-                    let ret = new ExpantaNum(player[this.layer].upgrades.length).add(1).pow(0.75).tetrate(1.01)
+                    let ret = new ExpantaNum(player[this.layer].upgrades.length).add(1).pow(1.045)
                     return ret;
                 },
                 effectDisplay() { return format(this.effect())+"x" }, // Add formatting to the effect
@@ -319,7 +319,7 @@ addLayer("e", {
                 title: "Energetic Psyche",
                 description: "Unlock Matter Dimensions.",
                 cost: new ExpantaNum(2500),
-                unlocked() { return hasUpgrade(this.layer, 14)},
+                unlocked() { return hasUpgrade(this.layer, 13) && hasUpgrade(this.layer, 14)},
             },
             21: {
                 title: "Emergent Behaviour",
