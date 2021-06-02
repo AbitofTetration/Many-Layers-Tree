@@ -61,7 +61,7 @@ addLayer("p", {
                 title: "Growing Booster",
                 description: "Point generation is faster based on your reset time.",
                 cost: new ExpantaNum(15),
-                unlocked() { return (hasUpgrade(this.layer, 2))},
+                unlocked() { return (hasUpgrade(this.layer, 12))},
                 effect() { // Calculate bonuses from the upgrade. Can return a single value or an object with multiple values
                     let main = new ExpantaNum(player[this.layer].resetTime).div(25)
                     if (player.b.buyables[11].gt(0)) main = main.mul(tmp.b.buyables[11].effect)
